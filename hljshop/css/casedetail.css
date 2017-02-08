@@ -1,0 +1,169 @@
+/* 案例详情 begin*/
+.container {
+  margin: 40px auto 0;
+}
+.house-article {
+  width: 1500px;
+  margin: 0 auto;
+}
+.house-article .aside {
+  width: 280px;
+  float: left;
+}
+.house-article .aside .designer {
+  padding: 10px 0 14px 0;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #b5b5b5;
+}
+.house-article .aside .designer p {
+  width: 140px;
+  margin: 18px auto 0;
+  text-align: left;
+}
+.house-article .aside .designer .ask-btn {
+  display: inline-block;
+  width: 180px;
+  height: 42px;
+  line-height: 42px;
+  color: #fff;
+  font-weight: 400;
+  font-size: 18px;
+  background: #fe9b00;
+  text-align: center;
+  margin: 20px 0 0 0;
+}
+.house-article .aside .article-recommend {
+  position: relative;
+  border: 1px solid #9fa0a0;
+  margin: 20px 0 0 0;
+}
+.house-article .aside .article-recommend .hot-btn {
+  width: 100%;
+  height: 42px;
+  line-height: 42px;
+  font-size: 22px;
+  color: #fff;
+  background: #9fa0a0;
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+.house-article .aside .article-recommend .hot-btn.bottom {
+  margin-bottom: 0;
+}
+.recommend-wrap {
+  overflow: hidden;
+}
+.recommend-wrap li {
+  text-align: center;
+  margin: 0 0 12px 0;
+}
+.recommend-wrap li a {
+  display: block;
+  color: #333;
+  font-size: 12px;
+}
+.recommend-wrap li span {
+  display: block;
+}
+.article {
+  width: 1200px;
+  float: left;
+  margin: 0 20px 0 0;
+}
+.article .article-title {
+  margin: 20px auto 52px;
+  text-align: center;
+}
+.article .article-title time {
+  color: #b5b5b6;
+  font-size: 12px;
+}
+.article .article-title h1 {
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0 0 8px 0;
+}
+.article .article-title .cate {
+  font-size: 14px;
+  color: #727171;
+}
+.article .article-title .cate span {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  margin-right: 15px;
+  height: 16px;
+  line-height: 16px;
+}
+.article .article-title .cate span:not(:last-child):after {
+  content: "";
+  display: table;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: auto;
+  right: -12px;
+  margin: 0;
+  height: 100%;
+  border-left: 1px solid #996600;
+}
+.article .content {
+  color: #666;
+}
+.article .content .radius-content {
+  position: relative;
+  height: 234px;
+  border: 1px solid #333;
+  border-top-left-radius: 65px;
+  border-bottom-right-radius: 65px;
+  padding: 58px 88px 0;
+  font-size: 18px;
+  margin: 0 0 12px 0;
+}
+.article .content .radius-content .intro {
+  width: 130px;
+  height: 42px;
+  position: absolute;
+  left: 64px;
+  top: -21px;
+  background: #666;
+  color: #fff;
+  display: block;
+  line-height: 42px;
+  font-size: 20px;
+  text-align: center;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.article .content img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+.article .icon-wrap {
+  float: right;
+}
+.article .icon-wrap .icon {
+  margin-left: 25px;
+}
+.page-btn {
+  padding: 28px 0 0 0;
+  text-align: center;
+}
+.page-btn .btn-prev {
+  margin-right: 132px;
+}
+.page-btn a {
+  width: 104px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: #f2f2f3;
+  color: #727171;
+  font-size: 14px;
+}
+.show-img-wrap {
+  height: 684px;
+}
+/* 案例详情 end*/

@@ -1,0 +1,141 @@
+/*vr家装详情 begin*/
+.play-video {
+  width: 1200px;
+  margin: 38px auto 0;
+}
+.play-video video {
+  width: 100%;
+}
+.play-video .video-wrap {
+  margin: 0 auto;
+}
+.play-video .video-area {
+  width: 1200px;
+  margin: 0 auto;
+}
+.play-video .video-area .video-wrap {
+  width: 960px;
+  height: 589px;
+  float: left;
+}
+.play-video .hot-video-recommend {
+  width: 240px;
+  float: right;
+  background: #333333;
+  color: #9fa0a0;
+  height: 589px;
+  overflow: hidden;
+}
+.play-video .hot-video-recommend h4 {
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+  font-size: 16px;
+  border-bottom: 1px solid #3e3a39;
+  margin: 0 0 10px;
+}
+.play-video .hot-video-recommend ul {
+  padding: 0 9px 0 12px;
+}
+.play-video .hot-video-recommend ul li {
+  text-align: center;
+  margin: 0 0 25px 0;
+}
+.play-video .hot-video-recommend ul li .hot-content {
+  text-align: left;
+}
+.play-video .hot-video-recommend .hot-content {
+  font-size: 14px;
+  color: #9fa0a0;
+}
+.play-video .hot-video-recommend .next {
+  border-top: 1px solid #3e3a39;
+  text-align: center;
+  height: 32px;
+  line-height: 32px;
+}
+.play-video .video-title {
+  width: 960px;
+  text-align: center;
+  color: #727171;
+  font-size: 16px;
+  margin: 0 0 14px 0;
+}
+.play-video .video-title .seetime {
+  float: right;
+}
+.play-video .video-title .seetime i {
+  vertical-align: -2px;
+  margin: 0 12px 0 0;
+}
+/*.social-share {
+  margin-top: 25px;
+  ul {
+    width: 448px;
+    margin: 0 auto;
+    li {
+      width: 112px;
+      float: left;
+      border-right: 1px solid #d7d7d7;
+      text-align: center;
+      &:last-child {
+        border-style: none;
+      }
+    }
+  }
+}
+
+.hot-recommend {
+  width: 1500px;
+  margin: 25px auto 0;
+  height: 50px;
+  .hot-title {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    &:after {
+      content:"";
+      width: 100%;
+      position: absolute;
+      height: 1px;
+      top: 50%;
+      background: #ccc;
+      z-index: 1;
+    }
+  }
+ .hot-content {
+    width: 215px;
+    height: 50px;
+    font-size: 26px;
+    line-height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    background: #fff;
+    color: #1E1E1E;
+    z-index: 2;
+  }
+  .recommend-goods {
+    margin-top: 26px;
+    ul {
+      li {
+        float: left;
+        width: 263px;
+        height: 206px;
+        margin: 0 56px 44px;
+        .goods-name {
+          font-size: 16px;
+          height: 30px;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+
+}*/
+/*vr家装详情 end*/

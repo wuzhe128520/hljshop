@@ -1,0 +1,145 @@
+.knowledge-container {
+  background: #a7a7a7;
+}
+.main {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+.main .arrow-left,
+.main .arrow-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.main .arrow-left {
+  left: -60px;
+}
+.main .arrow-right {
+  right: -60px;
+}
+.knowledge-wrap {
+  width: 100%;
+  height: 772px;
+  background: url(../images/knowledge-bg.png) no-repeat;
+  padding: 23px 30px 0 30px;
+  position: relative;
+}
+.knowledge-wrap .sort {
+  height: 38px;
+  line-height: 32px;
+  color: #595757;
+  font-size: 14px;
+  border-bottom: 1px solid #aaaaaa;
+}
+.knowledge-wrap .sort a {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  color: #595757;
+  font-size: 14px;
+  padding: 0 10px;
+}
+.knowledge-wrap .sort a.on {
+  background: #535353;
+  color: #fff;
+}
+.knowledge-list {
+  position: relative;
+  padding: 14px 0 0 0;
+}
+.knowledge-list > ul > li {
+  float: left;
+  margin: 0 18px 24px 0;
+}
+.knowledge-list > ul > li:nth-child(6n) {
+  margin-right: 0;
+}
+.knowledge-list > ul .img-wrap-a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.knowledge-list > ul .img-wrap-a img {
+  display: block;
+}
+.knowledge-list > ul .img-wrap-a .title {
+  height: 22px;
+  line-height: 22px;
+  background: #0f0e0c;
+  color: #fff;
+  font-size: 14px;
+  padding: 0 0 0 12px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.knowledge-list .left-menu {
+  position: absolute;
+  top: 60px;
+  left: -74px;
+}
+.knowledge-list .left-menu li {
+  width: 52px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 0 4px 0;
+  background: #1aadf9;
+  text-align: center;
+}
+.knowledge-list .left-menu li a {
+  color: #fff;
+}
+.knowledge-list .article-title {
+  text-align: center;
+  color: #393332;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+}
+.knowledge-list .time-wrap {
+  font-size: 12px;
+  color: #b5b5b6;
+  text-align: center;
+  height: 24px;
+  vertical-align: top;
+  border-bottom: 1px solid #c9c9c9;
+}
+.knowledge-list .main-article {
+  text-indent: 2em;
+  color: #b5b5b6;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.knowledge-list .main-article img {
+  display: block;
+  margin: 0 auto;
+}
+.knowledge-list .main-article p {
+  margin: 0 0 20px 0;
+}
+.knowledge-share {
+  position: absolute;
+  z-index: 1;
+  right: -30px;
+  bottom: 40px;
+}
+.knowledge-share .icon-wrap {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  margin: 0 0 4px 0;
+  background: #01adf4;
+  text-align: center;
+}
+.images-wrap ul li {
+  float: left;
+  margin: 0 10px 0 0;
+}
+.images-wrap ul li:last-child {
+  margin-right: 0;
+}

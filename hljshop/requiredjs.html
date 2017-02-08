@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>required js使用</title>
+    <!--  -->
+    <script type="text/javascript" defer async="true" data-main="js/plugin/main"  src="js/plugin/require.js"></script>
+</head>
+<body>
+<span>body</span>
+<script type="text/javascript">
+    /*
+    *  1、以module ID替代js文件的url地址
+    *  2、以baseUrl的地址来加载所有代码
+    *  3、页面顶层<script>标签的data-main属性的值是整个程序的入口，一般命名为main.js
+    *  4、baseUrl的路径一般与main.js在同一目录
+    *  5、如果没有指定config里面的baseUrl或data-main属性，默认的baseUrl为包含requireJs的那个html页面所在的目录
+    *  6、requireJs默认假定所有的依赖文件都是js脚本。因此module ID无需加".js"后缀名
+    *  7、在以下三种情况下，requireJs会避开常规的"baseUrl + paths"配置,直接加载js文件(一般情况下，都是使用baseUrl + paths)
+    *     a、以".js"结束
+    *     b、以"/"开始
+    *     c、包含URL协议，如"http:" or "https:"
+    *  8、main.js里面的模块都是异步加载的
+    *  9、一般情况下，每个加载的脚本都是通过define()来定义的一个模块。但有些"浏览器全局变量注入"型的传统/遗留库并没有使用
+    *     define()来定义它们的依赖关系，必须使用shim config来指明它们的依赖关系。如果没有指定依赖关系，加载可能报错。因为
+    *     requireJs是异步无序加载这些库的。
+    *  10、模块不同于传统的脚本文件，它良好地定义了一个作用域来避免全局名称空间污染。它可以显式地列出其依赖关系，并以函数
+    *  (定义此模块的那个函数)参数的形式将这些依赖进行注入，而无需引用全局变量。
+    *  11、每个javascript文件应该只定义一个模块。多个模块可以使用r.js优化工具将其组织打包(使用优化工具时，应将多个模块放置到一个文件中。)
+    *  12、定义模块
+    *      a、如果一个模块仅含值对，没有任何依赖，则在define()中定义这些值对就好了：
+     *          define({
+     *              color: "black",
+     *              size: "unisize"
+     *          });
+     *     b、如果一个模块没有任何依赖，但需要一个做setup工作的函数，则在define()中定义该函数，并将其传给define():
+     *          define(function(){
+     *              //do setup work here
+     *              return {
+     *                  color: "black",
+     *                  size: "unisize"
+     *              }
+     *          });
+     *      c、存在依赖的函数式定义
+     *          如果模块存在依赖： 则第一个参数是依赖的名称数组；第二个参数是函数，在模块的所有依赖加载完毕后，
+     *          该函数会被调用来定义该模块，因此该模块应该返回一个定义了本模块的object。依赖关系会以参数的形式
+     *          注入到该函数上，参数列表与依赖名称列表一一对应。
+     *          //此模块依赖同一目录下的cart模块和inventory模块,
+     *          //函数的参数顺序应该与依赖顺序保持一致
+     *          define(["./cart","./inventory"],function(cart, inventory){
+     *                  //返回一个对象来定义这个模块
+     *                  return {
+     *                      color: "blue",
+     *                      size: "large",
+     *                      addToCart: function(){
+     *                          inventory.decrement(this);
+     *                          cart.add(this);
+     *                      }
+     *                  }
+     *          });
+     *       d、返回一个函数的模块定义。requireJs对模块的返回值类型并没有强制为一定是个object,任何函数的返回值都是允许的。
+     *         define(["my/cart", "my/inventory"],function(cart, inventory){
+     *                 function(cart, inventory){
+     *                      //返回一个函数来定义此模块
+     *                      return function(title){
+     *                         return title ? (window.title = title) : inventory.storeName + ' ' + cart.name;
+     *                      }
+     *                 }
+     *         });
+     *       e、简单包装CommonJs来定义模块
+     *        define(function(require, exports, module){
+     *                var a = require("a"),
+     *                    b = require("b");
+     *                    //返回模块的值
+     *                    return function() {};
+     *        });
+     *   13、 define()中的相对模块名
+     *   14、生成相对于模块的URL地址(需要将require作为依赖注入进来)
+     *       define(['require'], function(){
+     *              var cssUrl = require.toUrl("./style.css");
+     *       });
+     *   15、控制台调试
+     *   如果你需要处理一个已通过require(["module/name"], function(){})调用加载了
+     *   的模块，可以使用模块名作为字符串参数的require()调用来获取它：
+     *          //这里的相对路径，仅在module/name已经被异步加载了后才有效
+     *          require("module/name").callSomeFunction();
+     *   16、JSONP服务依赖
+     *       为了在RequireJs中使用JSON服务，需要将callback参数的值指定为"define"。
+     *       这意味着你可将获取到的JSONP URL的值看成是一个模块定义。
+     *          //仅仅支持返回值类型为JSON object的JSONP服务
+     *          //JSONP的这种用法应仅限于应用的初始化中。
+     *          require(["http://example.com/api/data.json?callback=define"],
+     *                  function(data){
+     *                      console.log(data);
+     *                  }
+     *          );
+     *    17、清除模块
+     *      requirejs.undef();
+     *    18、机制
+     *        使用head.appendChild();  将每个依赖加载为一个script标签。
+     *    19、配置选配
+     *         a、当在顶层html页面(或不作为一个模块定义的顶层脚本文件)中，
+     *         可将配置作为首选项放入
+     *         <script type="text/javascript">
+     *              require.config({
+     *                  baseUrl: "another/path",
+     *                  paths: {
+     *                      "some": "some/v1.0"
+     *                  },
+     *                  waitSeconds: 15
+     *              });
+     *              require(["some/module", "my/module", "a.js", "b.js"],
+     *                      function(someModule, myModule){
+     *                              当上面列出的所有依赖都加载完成后，这个函数将会被调用。
+     *                              注意这个函数可能在页面加载完成之前被调用。这个回调函
+     *                              数是可选项。
+     *                      }
+     *              );
+     *         <\/script>
+     *         b、将配置作为全局变量"require"在require.js加载之前进行定义，它会被自动应用。
+     *            <script>
+     *               var require = {
+     *                      deps: ["some/module1", "my/module2", "a.js", "b.js"],
+     *                      callback: function(module1, module2){
+     *
+     *                      }
+     *               }
+     *            <\/script>
+     *            <script src="scripts/require.js"><\/script>
+     *         c、下面的示例定义的依赖会在require.js一旦定义了require()之后即被加载：
+     *             requirejs.config({
+     *                  bundles: {
+     *                      'primary': ['main', 'util', 'text', 'text!template.html'],
+     *                      'secondary': ['text!secondary.html']
+     *                  }
+     *             });
+     *         d、支持的配置项：
+     *            baseUrl: 所有模块的查找根路径。
+     *            paths: 映射那些不直接放置于baseUrl下的模块名。设置path时起始位置是相对于
+     *                   baseUrl的，除非该path设置以"/"开头或含有URL协议(如http:)
+     *            shim: 为那些没有使用define()来声明依赖关系、设置模块的"浏览器全局变量注入"型
+     *                  脚本做依赖和导出配置。
+     *                  requirejs.config({
+     *                          仅仅在没有使用AMD规范的脚本，
+     *                          或还没有调用define()函数的脚本使用shim配置
+     *                          shim: {
+     *                              'backbone': {
+     *                                   deps: ['underscore', 'jquery'],
+     *                                   //一旦加载后,使用全局的"Backbone"作为模块的值
+     *                                   exports: 'Backbone'
+     *                              },
+     *                              'underscore': {
+     *                                   exports: '_'
+     *                              },
+     *                              'foo': {
+     *                                   deps: ['bar'],
+     *                                   exports: 'Foo',
+     *                                   init: function(bar){
+     *                                          使用一个函数，允许你在支持noConflict的库里调用它
+     *                                          使用一个允许你为支持noConflict的库调用noConflict的函数
+     *                                          return this.Foo.noConflict();
+     *                                   }
+     *                              }
+     *                          }
+     *
+     *                  });
+     *
+     *     20、先加载cdn版本，如果出错，则回退到本地的版本
+     *          requirejs.config({
+     *              enforceDefine: true,
+     *              paths: {
+     *                  jquery: [
+     *                       'http://jquery.com/jquery',
+     *                    'lib/jquery'
+     *                  ]
+     *              }
+     *          });
+     *     21、requireJs加载插件
+     *         require(['domReady'], function(domReady){
+     *                  domReady(function(){
+     *                      //当dom文档加载完成后，这个函数会被调用
+     *                  });
+     *         });
+     *     22
+     *
+    * */
+
+</script>
+</body>
+</html>

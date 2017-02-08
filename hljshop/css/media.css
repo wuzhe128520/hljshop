@@ -1,0 +1,103 @@
+@media screen and (min-width: 1571px) {
+  .container {
+    width: 1571px;
+  }
+  .lg-hidden {
+    display: none;
+  }
+  li.media-li {
+    width: -moz-calc(16.66666666% - 6.666px);
+    width: -webkit-calc(16.66666666% - 6.666px);
+    width: calc(16.66666666% - 6.666px);
+  }
+  li.media-li:nth-child(6n) {
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 1570px) {
+  .filter ul.clearfix li {
+    width: 100%;
+    float: none;
+  }
+}
+/*
+  分辨率小于在1310px和1679px之间的
+*/
+@media screen and (min-width: 1308px) and (max-width: 1570px) {
+  .container {
+    width: 1308px;
+  }
+  li.media-li {
+    width: -moz-calc(20% - 6.666px);
+    width: -webkit-calc(20% - 6.666px);
+    width: calc(20% - 6.666px);
+  }
+  li.media-li:nth-child(5n) {
+    margin-right: 0;
+  }
+  .md-hidden {
+    display: none;
+  }
+}
+/*
+分辨率在1048px至1309px及以下
+*/
+@media screen and (min-width: 1045px) and (max-width: 1307px) {
+  .container {
+    width: 1045px;
+  }
+  li.media-li {
+    width: -moz-calc(25% - 6.666px);
+    width: -webkit-calc(25% - 6.666px);
+    width: calc(25% - 6.666px);
+  }
+  li.media-li:nth-child(4n) {
+    margin-right: 0;
+  }
+  .ms-hidden {
+    display: none;
+  }
+}
+/*
+分辨率在786px和1047px
+*/
+@media screen and (min-width: 782px) and (max-width: 1044px) {
+  .container {
+    width: 782px;
+  }
+  li.media-li {
+    width: -moz-calc(33.33333333% - 6.666px);
+    width: -webkit-calc(33.33333333% - 6.666px);
+    width: calc(33.33333333% - 6.666px);
+  }
+  li.media-li:nth-child(3n) {
+    margin-right: 0;
+  }
+  .xs-hidden {
+    display: none;
+  }
+}
+@media screen and (max-width: 1044px) {
+  .filter ul li {
+    min-width: 800px;
+  }
+}
+/*
+  分辨率小于785px
+*/
+@media screen and (max-width: 781px) {
+  .container {
+    width: 519px;
+  }
+  li.media-li {
+    width: -moz-calc(50% - 6.666px);
+    width: -webkit-calc(50% - 6.666px);
+    width: calc(50% - 6.666px);
+  }
+  li.media-li:nth-child(2n) {
+    margin-right: 0;
+  }
+  .min-hidden {
+    display: none;
+  }
+}

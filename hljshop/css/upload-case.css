@@ -1,0 +1,133 @@
+.upload-btn-big {
+  display: block;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background: #bebebe;
+  font-size: 24px;
+  color: #3e3a39;
+  margin: 0px 0 50px 0;
+}
+.notify-wrap {
+  height: 244px;
+  background: #fff;
+  -moz-box-shadow: 2px 2px 2px #eeeeee;
+  /* 老的 Firefox */
+  box-shadow: 2px 2px 2px #eeeeee;
+  padding: 32px 0 0 46px;
+}
+.notify-wrap .notify {
+  color: #d93600;
+  font-size: 18px;
+  font-weight: normal;
+}
+.notify-wrap ol {
+  padding: 0 0 0 106px;
+}
+.notify-wrap ol li {
+  margin: 0 0 16px 0;
+  color: #898989;
+  font-size: 14px;
+}
+.confirm-wrap {
+  text-align: center;
+}
+.confirm-btn {
+  width: 266px;
+  height: 64px;
+  line-height: 64px;
+  text-align: center;
+  background: #fa9324;
+  color: #fff;
+  -moz-box-shadow: 3px 3px 3px #b9b9b9;
+  /* 老的 Firefox */
+  box-shadow: 3px 3px 3px #b9b9b9;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  font-size: 18px;
+}
+.confirm-btn:active {
+  transform: translate(1px, 1px);
+  -moz-box-shadow: 2px 2px 2px #b9b9b9;
+  /* 老的 Firefox */
+  box-shadow: 2px 2px 2px #b9b9b9;
+}
+.main-wrap {
+  background: #efefef;
+}
+.main {
+  width: 1200px;
+  margin: 0 auto;
+  background: #efefef;
+  padding: 40px 0 0 0;
+}
+.upload-form {
+  width: 732px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: #595757;
+  padding: 0 0 58px 0;
+}
+.upload-form li:not(.area) {
+  height: 36px;
+  line-height: 36px;
+  margin: 0 0 26px 0;
+}
+.upload-form li.area {
+  margin: 0 0 58px 0;
+}
+.upload-form label,
+.upload-form input.special,
+.upload-form select {
+  display: block;
+  float: left;
+}
+.upload-form label {
+  width: 100px;
+}
+.upload-form input.special,
+.upload-form select {
+  background: #fff;
+  color: #b5b5b6;
+  height: 100%;
+  border: 1px solid #b5b5b5;
+  width: -moz-calc(100% - 100px);
+  width: -webkit-calc(100% - 100px);
+  width: calc(100% - 100px);
+}
+.upload-form select {
+  text-align: center;
+}
+.upload-form textarea {
+  width: -moz-calc(100% - 100px);
+  width: -webkit-calc(100% - 100px);
+  width: calc(100% - 100px);
+}
+.file-wrap {
+  position: relative;
+  z-index: 1;
+}
+.file-wrap .upload-file {
+  position: absolute;
+  top: 0;
+  left: 100px;
+  width: -moz-calc(100% - 100px);
+  width: -webkit-calc(100% - 100px);
+  width: calc(100% - 100px);
+  height: 100%;
+  background: #bebebe;
+  z-index: -1;
+  text-align: center;
+}
+.file-wrap input[type="file"] {
+  opacity: 0;
+  filter: alpha(opacity=@int);
+}
+.confirm-upload {
+  float: right;
+  width: -moz-calc(100% - 100px);
+  width: -webkit-calc(100% - 100px);
+  width: calc(100% - 100px);
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>提取图片的主色，并设置为父元素的背景色</title>
+    <style type="text/css">
+        div {
+            width: 500px;
+            height: 500px;
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img src="../image/waterfall/waterfall.png" data-adaptive-background />
+</div>
+<div>
+    <img src="../image/waterfall/waterfall00.jpg" data-adaptive-background />
+</div>
+<div>
+    <img src="../image/waterfall/waterfall01.png" data-adaptive-background />
+</div>
+<div>
+    <img src="../image/waterfall/waterfall04.png" data-adaptive-background />
+</div>
+<div>
+    <img src="../image/waterfall/waterfall005.png" data-adaptive-background />
+</div>
+
+
+<script type="text/javascript" src="../js/plugin/jquery2.js"></script>
+<script type="text/javascript" src="../js/plugin/jquery.adaptive-backgrounds.js"></script>
+<script type="text/javascript">
+    /* adaptive-backgrounds需要图片已经加载完后，再提取颜色 */
+    /* 图片加载完成后，不要立马显示，延迟几秒钟显示 */
+    $(function(){
+        $.adaptiveBackground.run();
+    });
+</script>
+</body>
+</html>

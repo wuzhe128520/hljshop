@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fly购物车特效</title>
+</head>
+<body>
+<img src="images/user-vip.jpg" id="fly">
+    <div style="position: fixed;top: 0;bottom: 0;margin: auto;right: 20px;width: 100px;height: 100px;
+   border-radius: 50%;border: 2px solid #333;line-height: 100px;text-align: center;color: red;font-size: 14px;" id="endPosition">购物车</div>
+    <script type="text/javascript" src="js/plugin/jquery2.js"></script>
+    <script type="text/javascript" src="js/plugin/fly/requestAnimationFrame.js"></script>
+    <script type="text/javascript" src="js/plugin/fly/jquery.fly.min.js"></script>
+    <script type="text/javascript">
+        $(init);
+        function init(){
+           /* $("#fly").click(function(){
+                var $target = $(this);
+                $('#fly').fly({
+                    start:{
+                        left: $target.offset().left,  //开始位置（必填）#fly元素会被设置成position: fixed
+                        top: $target.offset().top,  //开始位置（必填）
+                    },
+                    end:{
+                        left: $("#endPosition").offset().left, //结束位置（必填）
+                        top: $("#endPosition").offset().top,  //结束位置（必填）
+                        width: 100, //结束时高度
+                        height: 100, //结束时高度
+                    },
+                    autoPlay: true, //是否直接运动,默认true
+                    speed: 1.1, //越大越快，默认1.2
+                    vertex_Rtop: 100, //运动轨迹最高点top值，默认20
+                    onEnd: function(){
+                        console.log(this);
+                        this.destroy();
+                    } //结束回调
+                });
+            });
+       //移除dom*/
+
+    }
+
+    </script>
+</body>
+</html>

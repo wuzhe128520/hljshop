@@ -1,0 +1,146 @@
+/*案例 begin*/
+.house-cases ul li {
+  float: left;
+  margin: 0 8px 28px 0;
+}
+.house-cases ul li:first-child .show-house {
+  width: 551px;
+}
+.house-cases .show-house a {
+  display: block;
+}
+.house-cases .show-house a img {
+  display: block;
+}
+.house-cases .case-img-wrap {
+  border: 1px solid #bfbfbf;
+  border-top-style: none;
+  margin: 0 0 0 0;
+  padding: 10px 0 0 0;
+  background: #F9F9F9;
+  height: 66px;
+}
+.house-cases .case-img-wrap .user-big {
+  float: left;
+  width: 74px;
+  height: 48px;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  border-right: 1px solid #bfbfbf;
+}
+.house-cases .case-img-wrap .user-big img {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.house-cases .case-img-wrap .user-big.large {
+  height: 66px;
+}
+.house-cases .case-img-wrap .right-share {
+  width: 72%;
+  float: left;
+}
+.house-cases .case-img-wrap .right-share.large {
+  width: 86%;
+  padding: 0 0 0 16px;
+}
+.house-cases .case-img-wrap .right-share .icon {
+  margin-right: 10px;
+}
+.house-cases .case-img-wrap .right-share p {
+  font-size: 14px;
+  color: #595757;
+  margin: 0 0 8px 0;
+  width: 192px;
+  padding: 0 0 0 6px;
+}
+.house-cases .case-img-wrap .right-share p.title {
+  float: left;
+  font-size: 18px;
+  padding: 0;
+}
+.house-cases .case-img-wrap .right-share .icon-wrap {
+  float: right;
+}
+.house-cases .case-img-wrap .right-share .detail-text {
+  font-size: 14px;
+  color: #898989;
+}
+.house-cases .case-img-wrap.large {
+  height: 98px;
+}
+/*案例 end*/
+@media screen and (min-width: 1672px) {
+  .container {
+    width: 1672px;
+  }
+  .container li.media-li:nth-child(6n) {
+    margin-right: 0;
+  }
+  .container li.media-li.media-6-margin {
+    margin-right: 0;
+  }
+  .lg-hidden {
+    display: none;
+  }
+}
+@media screen and (min-width: 1394px) and (max-width: 1671px) {
+  .container {
+    width: 1394px;
+  }
+  .container li.media-li:nth-child(5n) {
+    margin-right: 0;
+  }
+}
+/*
+  分辨率小于在1672px以上
+*/
+@media screen and (min-width: 1112px) and (max-width: 1393px) {
+  .container {
+    width: 1112px;
+  }
+  .container li.media-li:nth-child(4n) {
+    margin-right: 0;
+  }
+  .md-hidden {
+    display: none;
+  }
+}
+/*
+分辨率在1048px至1309px及以下
+*/
+@media screen and (min-width: 832px) and (max-width: 1111px) {
+  .container {
+    width: 832px;
+  }
+  .container li.media-li:nth-child(3n) {
+    margin-right: 0;
+  }
+  .container li.media-li.media-3-margin {
+    margin-right: 0;
+  }
+  .ms-hidden {
+    display: none;
+  }
+}
+/*
+分辨率在786px和1047px
+*/
+@media screen and (max-width: 831px) {
+  .container {
+    width: 552px;
+  }
+  .container li.media-li:nth-child(2n) {
+    margin-right: 0;
+  }
+  .xs-hidden {
+    display: none;
+  }
+}
+@media screen and (max-width: 1670px) {
+  .filter ul.clearfix li {
+    width: 100%;
+    float: none;
+  }
+}

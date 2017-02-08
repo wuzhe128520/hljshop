@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多文件上传</title>
+    <link rel="stylesheet" type="text/css" href="js/plugin/webuploader/webuploader.css" >
+</head>
+<body>
+<!--<div id="uploader" class="wu-example">
+    &lt;!&ndash;用来存放文件信息&ndash;&gt;
+    <div id="thelist" class="uploader-list"></div>
+    <div class="btns">
+        <div id="picker">选择文件</div>
+        <button id="ctlBtn" class="btn btn-default">开始上传</button>
+    </div>
+</div>-->
+<div id="uploader" class="wu-example">
+    <!--用来存放文件信息-->
+    <div id="thelist" class="uploader-list"></div>
+    <div class="btns">
+        <div id="attach"></div>
+        <input type="button" value="上传" id="upload"/>
+    </div>
+</div>
+<div id="uploader1" class="wu-example">
+    <!--用来存放文件信息-->
+    <div id="thelist1" class="uploader-list"></div>
+    <div class="btns">
+        <div id="multi"></div>
+        <input type="button" value="上传" id="multiUpload"/>
+    </div>
+</div>
+<script type="text/javascript" src="js/plugin/jquery2.js"></script>
+<script type="text/javascript" src="js/plugin/webuploader/webuploader.js"></script>
+<!--<script type="text/javascript">
+    //初始化
+    var uploader = WebUploader.create({
+
+        // swf文件路径
+        swf: BASE_URL + '/js/Uploader.swf',
+
+        // 文件接收服务端。
+        server: 'http://webuploader.duapp.com/server/fileupload.php',
+
+        // 选择文件的按钮。可选。
+        // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+        pick: '#picker',
+
+        // 不压缩image, 默认如果是jpeg，文件上传前会压缩一把再上传！
+        resize: false
+    });
+
+    // 当有文件被添加进队列的时候
+    uploader.on( 'fileQueued', function( file ) {
+        $list.append( '<div id="' + file.id + '" class="item">' +
+                '<h4 class="info">' + file.name + '</h4>' +
+                '<p class="state">等待上传...</p>' +
+                '</div>' );
+    });
+    // 文件上传过程中创建进度条实时显示。
+    uploader.on( 'uploadProgress', function( file, percentage ) {
+        var $li = $( '#'+file.id ),
+                $percent = $li.find('.progress .progress-bar');
+
+        // 避免重复创建
+        if ( !$percent.length ) {
+            $percent = $('<div class="progress progress-striped active">' +
+                    '<div class="progress-bar" role="progressbar" style="width: 0%">' +
+                    '</div>' +
+                    '</div>').appendTo( $li ).find('.progress-bar');
+        }
+
+        $li.find('p.state').text('上传中');
+
+        $percent.css( 'width', percentage * 100 + '%' );
+    });
+    //上传成功
+    uploader.on( 'uploadSuccess', function( file ) {
+        $( '#'+file.id ).find('p.state').text('已上传');
+    });
+    //上传失败
+    uploader.on( 'uploadError', function( file ) {
+        $( '#'+file.id ).find('p.state').text('上传出错');
+    });
+    //上传完成
+    uploader.on( 'uploadComplete', function( file ) {
+        $( '#'+file.id ).find('.progress').fadeOut();
+    });
+</script>-->
+<script type="text/javascript">
+    $(function(){
+        var $list = $("#thelist1");
+        var fileSize = 0; //总文件大小
+        var fileName = []; //文件名列表
+        var fileSizeOneByOne =[];//每个文件大小
+        var uploader ;// 实例化
+        uploader = WebUploader.create({
+            auto:false, //是否自动上传
+            pick: {
+                id: '#multi',
+                label: '点击选择文件',
+                name:"multiFile"
+            },
+            swf: 'js/plugin/webuploader/Uploader.swf',
+            server: "ContentsDetail!multiUpload.action",
+            duplicate:true, //同一文件是否可重复选择
+            resize: false,
+            formData: {
+                "status":"multi",
+                "contentsDto.contentsId":"0000004730",
+                "uploadNum":"0000004730",
+                "existFlg":'false'
+            },
+            compress: null,//图片不压缩
+            chunked: true, //分片
+            chunkSize: 5 * 1024 * 1024, //每片5M
+            chunkRetry:false,//如果失败，则不重试
+            threads:1,//上传并发数。允许同时最大上传进程数。
+//fileNumLimit:50,//验证文件总数量, 超出则不允许加入队列
+// runtimeOrder: 'flash',
+// 禁掉全局的拖拽功能。这样不会出现图片拖进页面的时候，把图片打开。
+            disableGlobalDnd: true
+        });
+// 当有文件添加进来的时候
+        uploader.on( "fileQueued", function( file ) {
+            console.log("fileQueued:"+file.queuedId);
+            $list.append( "<div id='"+ file.id + "' class='item'>" +
+                    "<h4 class='info'>" + file.name + "</h4>" +
+                    "<p class='state'>等待上传...</p>" +
+                    "</div>" );
+        });
+// 当开始上传流程时触发
+        uploader.on( "startUpload", function() {
+            console.log("startUpload");
+//添加额外的表单参数
+            $.extend( true, uploader.options.formData, {"fileSize":fileSize,"multiFileName":fileName.join(","),"fileSizeOneByOne":fileSizeOneByOne.join(",")});
+        });
+//当某个文件上传到服务端响应后，会派送此事件来询问服务端响应是否有效。
+        uploader.on("uploadAccept",function(object,ret){
+//服务器响应了
+//ret._raw 类似于 data
+            console.log("uploadAccept");
+            console.log(ret);
+            var data =JSON.parse(ret._raw);
+            if(data.resultCode!="1" && data.resultCode !="3"){
+                if(data.resultCode == "9"){
+                    alert("error");
+                    uploader.reset();
+                    return;
+                }
+            }else{
+                uploader.reset();
+                alert("error");
+            }
+        })
+        uploader.on( "uploadSuccess", function( file ) {
+            $( "#"+file.id ).find("p.state").text("已上传");
+        });
+        uploader.on( "uploadError", function( file,reason ) {
+            $( "#"+file.id ).find("p.state").text("上传出错");
+            console.log("uploadError");
+            console.log(file);
+            console.log(reason);
+//多个文件
+            var fileArray = uploader.getFiles();
+            for(var i = 0 ;i<fileArray.length;i++){
+                uploader.cancelFile(fileArray[i]);
+                uploader.removeFile(fileArray[i],true);
+            }
+            uploader.reset();
+            fileSize = 0;
+            fileName = [];
+            fileSizeOneByOne=[];
+        });
+//当validate不通过时，会以派送错误事件的形式通知调用者
+        uploader.on("error",function(){
+            console.log("error");
+            uploader.reset();
+            fileSize = 0;
+            fileName = [];
+            fileSizeOneByOne=[];
+            alert("error");
+        })
+//如果是在模态框里的上传按钮，点击file的时候不会触发控件
+//修复model内部点击不会触发选择文件的BUG
+        /* $("#multi .webuploader-pick").click(function () {
+         uploader.reset();
+         fileSize = 0;
+         fileName = [];
+         fileSizeOneByOne=[];
+         $("#multi :file").click();//关键代码
+         });*/
+//选择文件之后执行上传
+        $(document).on("change","input[name='multiFile']", function() {
+            var fileArray1 = uploader.getFiles();
+            for(var i = 0 ;i<fileArray1.length;i++){
+//后台用
+                fileSize +=fileArray1[i].size;
+                fileSizeOneByOne.push(fileArray1[i].size);
+                fileName.push(fileArray1[i].name);
+            }
+            console.log(fileSize);
+            console.log(fileSizeOneByOne);
+            console.log(fileName);
+        })
+        /**
+         * 多文件上传
+         */
+        $("input[name='multiUpload']").on("click",function(){
+            uploader.upload();
+        })
+    });
+    /*********************************WebUpload 多文件上传 end*****************************************/
+
+</script>
+</body>
+</html>

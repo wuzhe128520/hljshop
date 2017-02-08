@@ -1,0 +1,30 @@
+//计算宽度
+.calc-width(@num) {
+  width: -moz-calc(@num);
+  width: -webkit-calc(@num);
+  width: calc(@num);
+}
+//过渡
+.transition(@attr,@time) {
+  transition: @attr @time;
+  -moz-transition: @attr @time; /* Firefox 4 */
+  -webkit-transition: @attr @time; /* Safari 和 Chrome */
+  -o-transition: @attr @time; /* Opera */
+}
+//边框圆角
+.radius(@size){
+  -webkit-border-radius: @size;
+  -moz-border-radius: @size;
+  border-radius: @size;
+}
+//阴影
+
+.boxshadow(@h-shadow,@v-shadow,@blur,@color) {
+  -moz-box-shadow: @h-shadow @v-shadow @blur @color; /* 老的 Firefox */
+  box-shadow: @h-shadow @v-shadow @blur @color;
+}
+//透明度
+.opacity(@int,@float) {
+  opacity: @float;
+  filter: ~"alpha(opacity=@int)";
+}

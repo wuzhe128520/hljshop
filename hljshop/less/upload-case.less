@@ -1,0 +1,77 @@
+@import "variable.less";
+@import "notify.less";
+.main-wrap {
+  background: #efefef;
+}
+.main {
+  width: 1200px;
+  margin: 0 auto;
+  background: #efefef;
+  padding: 40px 0 0 0;
+}
+.upload-form {
+  width: 732px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: #595757;
+  padding: 0 0 58px 0;
+  li {
+    &:not(.area) {
+      height: 36px;
+      line-height: 36px;
+      margin: 0 0 26px 0;
+    }
+    &.area {
+      margin: 0 0 58px 0;
+    }
+
+  }
+  label,
+  input.special,
+  select
+  {
+    display: block;
+    float: left;
+  }
+  label {
+    width: 100px;
+    &.large-space {
+
+    }
+  }
+  input.special,
+  select, {
+    background: #fff;
+    color: #b5b5b6;
+    height: 100%;
+    border: 1px solid #b5b5b5;
+    .calc-width(~"100% - 100px");
+  }
+  select {
+    text-align: center;
+  }
+  textarea {
+    .calc-width(~"100% - 100px");
+  }
+}
+.file-wrap {
+  position: relative;
+  z-index: 1;
+  .upload-file {
+    position: absolute;
+    top: 0;
+    left: 100px;
+    .calc-width(~"100% - 100px");
+    height: 100%;
+    background: #bebebe;
+    z-index: -1;
+    text-align: center;
+  }
+  input[type="file"] {
+    .opacity(0,0);
+  }
+}
+.confirm-upload {
+  float: right;
+  .calc-width(~"100% - 100px");
+}

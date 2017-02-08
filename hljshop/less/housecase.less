@@ -1,0 +1,178 @@
+@import "variable.less";
+/*案例 begin*/
+
+.house-cases {
+  ul {
+    li {
+      float: left;
+      margin: 0 8px 28px 0;
+      &:first-child {
+          .show-house {
+            width: 551px;
+          }
+      }
+    }
+  }
+  .show-house {
+    a {
+      display: block;
+      img {
+        display: block;
+      }
+    }
+
+  }
+  .case-img-wrap {
+    border: 1px solid #bfbfbf;
+    border-top-style: none;
+    margin: 0 0 0 0;
+    padding: 10px 0 0 0;
+    background: #F9F9F9;
+    height: 66px;
+    .user-big {
+      float: left;
+      width: 74px;
+      height: 48px;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      border-right: 1px solid #bfbfbf;
+      img {
+        .radius(50%);
+      }
+      &.large {
+        height: 66px;
+      }
+    }
+    .right-share {
+      width: 72%;
+      float: left;
+      &.large {
+        width: 86%;
+        padding: 0 0 0 16px;
+      }
+      .icon {
+        margin-right: 10px;
+      }
+      p {
+        font-size: 14px;
+        color: #595757;
+        margin: 0 0 8px 0;
+        width: 192px;
+        padding: 0 0 0 6px;
+        &.title {
+          float: left;
+          font-size: 18px;
+          padding: 0;
+        }
+      }
+      .icon-wrap {
+        float: right;
+      }
+      .detail-text {
+        font-size: 14px;
+        color: #898989;
+      }
+    }
+    &.large {
+      height: 98px;
+    }
+  }
+}
+/*案例 end*/
+@media screen and (min-width: 1672px) {
+  .container {
+    width: 1672px;
+    li.media-li {
+      &:nth-child(6n) {
+        margin-right: 0;
+      }
+      &.media-6-margin {
+        margin-right: 0;
+      }
+    }
+  }
+
+  //大屏幕隐藏
+  .lg-hidden {
+    display: none;
+  }
+
+}
+@media screen and (min-width: 1394px) and (max-width: 1671px) {
+  .container {
+    width: 1394px;
+    li.media-li {
+      &:nth-child(5n) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+/*
+  分辨率小于在1672px以上
+*/
+@media screen and (min-width: 1112px) and (max-width: 1393px) {
+  .container {
+    width: 1112px;
+    li.media-li {
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
+    }
+  }
+  //小屏幕隐藏
+  .md-hidden {
+    display: none;
+  }
+}
+/*
+分辨率在1048px至1309px及以下
+*/
+@media screen and (min-width: 832px) and (max-width: 1111px) {
+
+  .container {
+    width: 832px;
+    li.media-li {
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+      &.media-3-margin {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .ms-hidden {
+    display: none;
+  }
+}
+/*
+分辨率在786px和1047px
+*/
+@media screen and (max-width: 831px) {
+
+  .container {
+    width: 552px;
+    li.media-li {
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .xs-hidden {
+    display: none;
+  }
+
+}
+@media screen and (max-width: 1670px) {
+  .filter {
+    ul.clearfix {
+      li {
+        width: 100%;
+        float: none;
+      }
+    }
+  }
+}

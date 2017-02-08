@@ -1,0 +1,82 @@
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  color: #fff;
+}
+.bg {
+  position: absolute;
+  z-index: -1;
+  background: url(../images/ts-bg.JPEG) no-repeat 100% 100%;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  filter: blur(5px);
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=10, MakeShadow=false);
+}
+.prompt-wrap {
+  width: 780px;
+  height: 264px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.5);
+  filter: alpha(opacity=50);
+  padding: 20px;
+  background-size: cover;
+}
+.icon-wran {
+  width: 194px;
+  height: 194px;
+  background: #bcbec0 url(../images/warn.png) no-repeat center center;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.detail dt,
+.detail dd {
+  margin: 0 0 10px 0;
+}
+.detail .sorry {
+  font-size: 36px;
+}
+.detail .txt {
+  font-size: 20px;
+  color: lightgray;
+}
+.detail .english {
+  font-size: 14px;
+  border-bottom: 1px solid #bcbec0;
+  padding: 0 0 18px 0;
+  color: lightgray;
+}
+.btn-group {
+  padding: 10px 0 0 0;
+}
+.btn-group a {
+  display: inline-block;
+  width: 220px;
+  height: 60px;
+  line-height: 60px;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+.btn-group a:first-child {
+  background: #fa9324;
+  margin: 0 88px 0 0;
+}
+.btn-group a:last-child {
+  background: #d93600;
+}

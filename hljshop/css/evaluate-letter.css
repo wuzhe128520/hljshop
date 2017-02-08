@@ -1,0 +1,25 @@
+.container {
+  width: 1200px;
+}
+.article {
+  width: 990px;
+}
+.house-article .aside {
+  width: 170px;
+}
+.house-article .aside .article-recommend {
+  border: 0;
+}
+.show-img-wrap {
+  height: 705px;
+}
+.recommend-wrap {
+  height: auto;
+}
+.recommend-wrap li {
+  height: 129px;
+}
+.recommend-wrap li img {
+  display: block;
+  max-width: 100%;
+}

@@ -1,0 +1,166 @@
+/* vr家装 begin*/
+.banner {
+  margin: 0 auto 20px;
+  overflow: hidden;
+  max-height: 378px;
+  position: relative;
+  min-width: 996px;
+}
+.case-wrap .case {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #000;
+  margin-bottom: 24px;
+}
+.case-wrap .case h1 {
+  width: 155px;
+  display: inline-block;
+  font-weight: normal;
+  font-size: 25px;
+  letter-spacing: 10px;
+  vertical-align: top;
+  color: #333;
+}
+.case-wrap .case i {
+  position: relative;
+  top: 6px;
+}
+.case-wrap .show-case > ul > li {
+  float: left;
+  margin: 0 20px 30px 0;
+}
+.case-wrap .show-case > ul .video-wrap {
+  position: relative;
+  z-index: 1;
+}
+.case-wrap .show-case > ul .video-wrap:hover .video-bg {
+  background: rgba(0, 0, 0, 0.6);
+  filter: alpha(opacity = 60);
+  z-index: 2;
+}
+.case-wrap .show-case > ul .video-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  filter: alpha(opacity = 0);
+  z-index: -1;
+  transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  /* Firefox 4 */
+  -webkit-transition: all 0.8s;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.8s;
+  /* Opera */
+}
+.case-wrap .show-case > ul .video-bg .stop {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.case-wrap .show-case .detail {
+  height: 46px;
+  line-height: 46px;
+  text-align: center;
+  color: #727171;
+}
+.case-wrap .show-case .detail img {
+  display: inline-block;
+  vertical-align: middle;
+}
+.case-wrap .show-case .detail .icon-video {
+  position: relative;
+}
+.case-wrap .show-case .detail .user {
+  font-size: 14px;
+  color: #898989;
+}
+.case-wrap .show-case .detail .times {
+  color: #999;
+  font-size: 12px;
+}
+.case-wrap .show-case .detail .casename {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  max-width: 220px;
+  padding: 0 0 0 6px;
+}
+.case-wrap .show-case .detail .casename:before {
+  content: "";
+  border-left: 1px solid #898989;
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 60%;
+}
+.case-wrap .show-case .detail .casename a {
+  color: #727171;
+}
+.case-wrap .show-case .detail ul li {
+  float: left;
+  text-align: right;
+}
+.case-wrap .show-case .detail ul li:first-child {
+  margin: 0 24px 0 8px;
+}
+.case-wrap .show-case .detail ul li:last-child {
+  float: right;
+  margin-right: 8px;
+}
+.case-wrap .show-case .description {
+  font-size: 16px;
+  color: #727171;
+  margin: 6px 0 12px 0;
+}
+.img-wrap-a img {
+  display: block;
+  width: 100%;
+  max-width: 402px;
+}
+/*vr家装 end*/
+@media screen and (min-width: 1672px) {
+  .container {
+    width: 1672px;
+  }
+  .container .li-self {
+    width: -moz-calc(25% - 15px);
+    width: -webkit-calc(25% - 15px);
+    width: calc(25% - 15px);
+  }
+  .container .li-self:nth-child(4n) {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 1256px) and (max-width: 1671px) {
+  .container {
+    width: 1256px;
+  }
+  .container .li-self {
+    width: -moz-calc(33.33333333% - 15px);
+    width: -webkit-calc(33.33333333% - 15px);
+    width: calc(33.33333333% - 15px);
+  }
+  .container .li-self:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 1255px) {
+  .container {
+    width: 819px;
+  }
+  .container .li-self {
+    width: -moz-calc(50% - 15px);
+    width: -webkit-calc(50% - 15px);
+    width: calc(50% - 15px);
+  }
+  .container .li-self:nth-child(2n) {
+    margin-right: 0;
+  }
+}

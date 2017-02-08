@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="initial-scale=1,minimum-scale=1">
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 不让百度转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow"/>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/hlj.css" />
+    <link rel="stylesheet" href="css/sprite.css" />
+    <link rel="stylesheet" href="css/imagescale.css" />
+    <title>图片放大</title>
+    <style type="text/css">
+        /*图库 begin*/
+        .share-img {
+            height: 40px;
+            line-height: 40px;
+            background: #FFFAE6;
+            color: #DCA900;
+            padding: 0 0 0 28px;
+
+        }
+        .share-img .icon {
+            margin: 0 5px;
+        }
+        /*图库 end*/
+        .nav > ul > li.images {
+            background: #d93600;
+        }
+        .nav > ul > li.images a {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="header container clearfix">
+    <a class="logo">
+        <img src="images/logo.jpg" />
+    </a>
+    <!-- 搜索 begin -->
+    <div class="search-wrap">
+        <div class="search">
+            <div class="search-select" id="dropdown">
+                <div class="js_drop_txt drop-txt-wrap">
+                    家居馆
+                </div>
+                <i class="icon icon-drop js_drop_arrow pointer"></i>
+            </div>
+            <input type="text"  placeholder="欢迎光临海狸家"/>
+            <div class="search-icon-wrap">
+                <i class="icon icon-search"></i>
+            </div>
+        </div>
+        <a href="javascript:void(0);" class="btn-3d">3D设计</a>
+    </div>
+    <!-- 搜索 end -->
+</div>
+<!--导航begin-->
+<!--导航begin-->
+<div class="wrapper">
+    <div  class="nav container">
+        <ul class="clearfix">
+            <li class="active house-in">
+                <a href="javascript:void(0);">家居馆</a>
+                <ul class="level-2">
+                    <li><a href="">设计师</a></li>
+                    <li><a href="">设计公司</a></li>
+                    <li><a href="">风水师</a></li>
+                    <li><a href="">施工队</a></li>
+                    <li><a href="">工程公司</a></li>
+                    <li><a href="">查找附近</a></li>
+                </ul>
+            </li>
+            <li class="vr">
+                <a href="javascript:void(0);">VR家装</a>
+            </li>
+            <li class="case">
+                <a href="javascript:void(0);">案例</a>
+                <ul class="level-2">
+                    <li><a href="">设计案例</a></li>
+                    <li><a href="">风水案例</a></li>
+                    <li><a href="">施工案例</a></li>
+                    <li><a href="">DIY样板</a></li>
+                    <li><a href="">家装直播间</a></li>
+                </ul>
+            </li>
+            <li class="images">
+                <a href="javascript:void(0);">图库</a>
+            </li>
+            <li class="knowledge">
+                <a href="javascript:void(0);">知识</a>
+            </li>
+            <li class="evaluate">
+                <a href="javascript:void(0);">评测</a>
+            </li>
+            <li class="house">
+                <a href="javascript:void(0);">房产</a>
+                <ul class="level-2">
+                    <li><a href="">楼盘</a></li>
+                    <li><a href="">招标</a></li>
+                    <li><a href="">金融与贷款</a></li>
+                </ul>
+            </li>
+            <li class="shop">
+                <a href="javascript:void(0);">商城</a>
+                <ul class="level-2">
+                    <li><a href="">进驻商城</a></li>
+                    <li><a href="">商家入住</a></li>
+                    <li><a href="">商务加盟</a></li>
+                    <li><a href="">联系我们</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--导航end-->
+<!--导航end-->
+<!--ad banner begin-->
+<div class="ad-banner">
+    <a href="javascript:void(0);">
+        <img src="images/adbanner.png" alt="" />
+    </a>
+</div>
+<!--ad banner end-->
+<div class="main">
+    <div class="img-scale-wrap clearfix">
+        <div class="img-scale-main">
+            <div class="img-scale-title clearfix">
+                图片名称
+                <div class="btn-group">
+                    <a class="icon icon-abtn download" href="javascript:void(0);">下载</a>
+                    <a class="icon icon-abtn collect" href="javascript:void(0);">收藏</a>
+                </div>
+            </div>
+            <div class="img-content-wrap">
+                <img src="image/imgscale.png" alt=""/>
+            </div>
+        </div>
+    </div>
+    <!--热门推荐begin-->
+    <!--热门推荐begin-->
+    <div class="hot-recommend container">
+        <div class="hot-title">
+            <span class="hot-content">热门推荐</span>
+        </div>
+        <div class="recommend-goods">
+            <ul class="clearfix">
+                <li>
+                    <a href="javascript:void(0);"><img src="images/img-recommend.png" alt=""/></a>
+                    <dl class="clearfix">
+                        <dt class="ellipsis img-info"><a href="">图片信息</a></dt>
+                        <dd>
+                            <i class="icon icon-download"></i>
+                            10
+                        </dd>
+                        <dd>
+                            <i class="icon icon-like"></i>
+                            10
+                        </dd>
+                        <dd>
+                            <i class="icon icon-eye"></i>
+                            10
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><img src="images/img-recommend.png" alt=""/></a>
+                    <dl class="clearfix">
+                        <dt class="ellipsis img-info"><a href="">图片信息</a></dt>
+                        <dd>
+                            <i class="icon icon-download"></i>
+                            10
+                        </dd>
+                        <dd>
+                            <i class="icon icon-like"></i>
+                            10
+                        </dd>
+                        <dd>
+                            <i class="icon icon-eye"></i>
+                            10
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><img src="images/img-recommend.png" alt=""/></a>
+                    <dl class="clearfix">
+                        <dt class="ellipsis img-info"><a href="">图片信息</a></dt>
+                        <dd>
+                            <i class="icon icon-download"></i>
+                            10
+                        </dd>
+                        <dd>
+                            <i class="icon icon-like"></i>
+                            10
+                        </dd>
+                        <dd>
+                            <i class="icon icon-eye"></i>
+                            10
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><img src="images/img-recommend.png" alt=""/></a>
+                    <dl class="clearfix">
+                        <dt class="ellipsis img-info"><a href="">图片信息</a></dt>
+                        <dd>
+                            <i class="icon icon-download"></i>
+                            10
+                        </dd>
+                        <dd>
+                            <i class="icon icon-like"></i>
+                            10
+                        </dd>
+                        <dd>
+                            <i class="icon icon-eye"></i>
+                            10
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><img src="images/img-recommend.png" alt=""/></a>
+                    <dl class="clearfix">
+                        <dt class="ellipsis img-info"><a href="">图片信息</a></dt>
+                        <dd>
+                            <i class="icon icon-download"></i>
+                            10
+                        </dd>
+                        <dd>
+                            <i class="icon icon-like"></i>
+                            10
+                        </dd>
+                        <dd>
+                            <i class="icon icon-eye"></i>
+                            10
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><img src="images/img-recommend.png" alt=""/></a>
+                    <dl class="clearfix">
+                        <dt class="ellipsis img-info"><a href="">图片信息</a></dt>
+                        <dd>
+                            <i class="icon icon-download"></i>
+                            10
+                        </dd>
+                        <dd>
+                            <i class="icon icon-like"></i>
+                            10
+                        </dd>
+                        <dd>
+                            <i class="icon icon-eye"></i>
+                            10
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><img src="images/img-recommend.png" alt=""/></a>
+                    <dl class="clearfix">
+                        <dt class="ellipsis img-info"><a href="">图片信息</a></dt>
+                        <dd>
+                            <i class="icon icon-download"></i>
+                            10
+                        </dd>
+                        <dd>
+                            <i class="icon icon-like"></i>
+                            10
+                        </dd>
+                        <dd>
+                            <i class="icon icon-eye"></i>
+                            10
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><img src="images/img-recommend.png" alt=""/></a>
+                    <dl class="clearfix">
+                        <dt class="ellipsis img-info"><a href="">图片信息</a></dt>
+                        <dd>
+                            <i class="icon icon-download"></i>
+                            10
+                        </dd>
+                        <dd>
+                            <i class="icon icon-like"></i>
+                            10
+                        </dd>
+                        <dd>
+                            <i class="icon icon-eye"></i>
+                            10
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><img src="images/img-recommend.png" alt=""/></a>
+                    <dl class="clearfix">
+                        <dt class="ellipsis img-info"><a href="">图片信息</a></dt>
+                        <dd>
+                            <i class="icon icon-download"></i>
+                            10
+                        </dd>
+                        <dd>
+                            <i class="icon icon-like"></i>
+                            10
+                        </dd>
+                        <dd>
+                            <i class="icon icon-eye"></i>
+                            10
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><img src="images/img-recommend.png" alt=""/></a>
+                    <dl class="clearfix">
+                        <dt class="ellipsis img-info"><a href="">图片信息</a></dt>
+                        <dd>
+                            <i class="icon icon-download"></i>
+                            10
+                        </dd>
+                        <dd>
+                            <i class="icon icon-like"></i>
+                            10
+                        </dd>
+                        <dd>
+                            <i class="icon icon-eye"></i>
+                            10
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><img src="images/img-recommend.png" alt=""/></a>
+                    <dl class="clearfix">
+                        <dt class="ellipsis img-info"><a href="">图片信息</a></dt>
+                        <dd>
+                            <i class="icon icon-download"></i>
+                            10
+                        </dd>
+                        <dd>
+                            <i class="icon icon-like"></i>
+                            10
+                        </dd>
+                        <dd>
+                            <i class="icon icon-eye"></i>
+                            10
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <div class="load-more">
+            <a href="javascript:void(0);">
+                加载更多
+            </a>
+        </div>
+    </div>
+    <!--热门推荐end-->
+    <!--热门推荐end-->
+</div>
+<!--这是是评论部分，考虑是直接用商城的，还是使用第三方的社会化评论系统(支持各种社交系统) begin-->
+<div class="comments" style="display: none;">评论部分</div>
+<!--这里是评论部分 end-->
+<script type="text/javascript" src="js/plugin/jquery2.js"></script>
+<script type="text/javascript" src="js/plugin/underscore-min.js"></script>
+<script type="text/javascript" src="js/plugin/layer/layer3.js"></script>
+<script type="text/javascript" src="js/plugin/unslider/js/unslider-min.js"></script>
+<script type="text/javascript" src="js/hljcomm.js"></script>
+<script type="text/javascript" src="js/hljdialog.js"></script>
+<script type="text/javascript" src="js/hljslider.js"></script>
+<script type="text/template" id="dropTpl">
+    <div class="drop-down js_drop_option">
+        <ul>
+            <li>家居馆</li>
+            <li>VR</li>
+            <li>图库</li>
+            <li>知识</li>
+            <li>测评</li>
+            <li>商城</li>
+            <li>房产</li>
+        </ul>
+    </div>
+</script>
+<script type="text/javascript">
+    $(init);
+    function init(){
+        HLJcomm.dropdown();
+    }
+</script>
+</body>
+</html>
